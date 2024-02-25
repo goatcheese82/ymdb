@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>{{stake.name}}</title>
+</head>
+<body>
+   {% if wards %}
+   <ul>
+      {% for ward in wards %}
+         <li><a href="{% url 'directories:ward' ward.id %}">{{ward.name}}</a></li>
+      {% endfor %}
+   </ul>
+{% else %}
+   <p>This stake has no recorded members</p>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>{{ward.name}}</title>
+</head>
+<body>
+   {% if members %}
+      <ul>
+         {% for member in members %}
+            <li><a href="/users/{{ member.id }}/">{{member.first_name}} {{member.last_name}}</a></li>
+         {% endfor %}
+      </ul>
+   {% else %}
+      <p>This ward has no recorded members</p>
+   {% endif %}
+</body>
+</html>
